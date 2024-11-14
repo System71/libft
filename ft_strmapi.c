@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 09:57:32 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 11:14:01 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:08:52 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	result[i] = '\0';
 	return (result);
 }
-
-// char	f(unsigned int i, char c)
-// {
-// 	char	result;
-
-// 	result = c;
-// 	if (c == ' ')
-// 	{
-// 		result = '/';
-// 	}
-// 	return (result);
-// }
-
-// int	main(void)
-// {
-// 	char *str = "coucou ca va";
-
-// 	printf("%s\n", ft_strmapi(str, f));
-// }

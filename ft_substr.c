@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 13:57:57 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/07 14:46:08 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:11:40 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int		i;
-	char	*str;
+	unsigned long	i;
+	char			*str;
 
 	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL || start >= ft_strlen(s))
@@ -31,8 +31,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	printf("resultat = %s \n", ft_substr("bonjour", 2, 0));
-// }

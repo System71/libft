@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 15:27:56 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/07 07:46:30 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:54:59 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 	result = 0;
 	i = 0;
 	c = 1;
-	while (str[i] >= 9 && str[i] <= 13 || str[i] == 32)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 	{
 		i++;
 	}
@@ -34,9 +34,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (c * result);
-}
-
-int	main(void)
-{
-	printf("resultat = %d \n", ft_atoi("    -----12548awe125"));
 }

@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/04 13:19:33 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 14:59:11 by prigaudi         ###   ########.fr       */
+/*   Created: 2024/11/14 13:43:05 by prigaudi          #+#    #+#             */
+/*   Updated: 2024/11/14 15:06:31 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
+#include <unistd.h>
+
+void	ft_putnbr_fd(int n, int fd)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	int	x;
+
+	if (n == -2147483648)
 	{
-		return (1);
+		write(fd, "-2147483648\n", 11);
+		return ;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+	}
+	if (n >= 0 && n <= 9)
+	{
+		x = n % 10 + 48;
+		write(fd, &x, 1);
 	}
 	else
 	{
-		return (0);
+		ft_putnbr_fd(n / 10, fd);
+		x = n % 10 + 48;
+		write(fd, &x, 1);
 	}
 }

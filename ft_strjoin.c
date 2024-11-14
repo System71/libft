@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:46:28 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/07 14:56:01 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:07:28 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str[i] = '\0';
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	printf("resultat = %s\n", ft_strjoin("coucou ", "toi"));
-// }

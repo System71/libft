@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:57:02 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/07 17:34:33 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:11:10 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
-
-// int	main(void)
-// {
-// 	printf("resultat = <%s>\n", ft_strtrim("**///*/coucouhello///**//", ""));
-// }

@@ -6,14 +6,15 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 09:53:33 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 09:54:23 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:01:25 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_itoa(int n)
 {
-}
+	char	*result;
 
-int	main(void)
-{
+	result = 0;
+	(void)n;
+	return (result);
 }

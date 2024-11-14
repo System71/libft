@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:35:12 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 10:06:59 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:06:50 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 	int		start;
 	int		i;
-	int		counter;
 	int		j;
 
 	split = malloc(sizeof(char *) * (char_count(s, c) + 2));
@@ -72,17 +71,3 @@ char	**ft_split(char const *s, char c)
 	split[j + 1] = NULL;
 	return (split);
 }
-
-// int	main(void)
-// {
-// 	char **split;
-// 	int i;
-
-// 	split = ft_split("hello/ca/va/bien/et/toi", '/');
-// 	i = 0;
-// 	while (split[i] != NULL)
-// 	{
-// 		printf("%s\n", split[i]);
-// 		i++;
-// 	}
-// }

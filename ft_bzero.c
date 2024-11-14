@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:18:20 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/07 08:33:02 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 14:55:14 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,4 @@ void	ft_bzero(void *ptr, size_t n)
 		tamp++;
 		n--;
 	}
-}
-
-int	main(void)
-{
-	void *ptr;
-	int n = 5;
-
-	ft_bzero(ptr, n);
-	printf("resultat = %s \n", (unsigned char *)ptr);
 }

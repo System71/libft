@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:55:43 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/06 14:32:10 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:08:34 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	i;
+	unsigned long	i;
 
 	i = 0;
 	while (src[i] != '\0' && i < size - 1)
@@ -26,11 +26,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[i] = '\0';
 	return (ft_strlen(src));
 }
-
-// int	main(void)
-// {
-// 	char *dest[100];
-// 	char *src = "";
-// 	int size = 4;
-// 	printf("resultat = %zu \n", ft_strlcpy(dest, src, size));
-// }

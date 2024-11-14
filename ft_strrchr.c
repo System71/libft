@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/06 11:11:42 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/06 11:44:05 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 15:11:00 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	char *tamp;
+	char	*tamp;
 
 	tamp = NULL;
 	while (*str != '\0')
