@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:35:12 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 09:52:30 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 10:06:59 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	*extract2(char const *str, int start, int i)
+char	*extract(char const *s, int start, int i)
 {
 	int		j;
 	char	*extracted_str;
@@ -23,44 +23,28 @@ char	*extract2(char const *str, int start, int i)
 	j = 0;
 	while (j + start < i)
 	{
-		extracted_str[j] = str[start + j];
+		extracted_str[j] = s[start + j];
 		j++;
 	}
 	extracted_str[j] = '\0';
 	return (extracted_str);
 }
 
-char	*extract(char const *str, int start, int i)
-{
-	int		j;
-	char	*extracted_str;
-
-	extracted_str = malloc(sizeof(char) * (i - start + 1));
-	j = 0;
-	while (j + start < i)
-	{
-		extracted_str[j] = str[start + j];
-		j++;
-	}
-	extracted_str[j] = '\0';
-	return (extracted_str);
-}
-
-int	char_count(char const *str, char c)
+int	char_count(char const *s, char c)
 {
 	int	counter;
 
 	counter = 0;
-	while (*str != '\0')
+	while (*s != '\0')
 	{
-		if (*str == c)
+		if (*s == c)
 			counter++;
-		str++;
+		s++;
 	}
 	return (counter);
 }
 
-char	**ft_split(char const *str, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		start;
@@ -68,23 +52,23 @@ char	**ft_split(char const *str, char c)
 	int		counter;
 	int		j;
 
-	split = malloc(sizeof(char *) * (char_count(str, c) + 2));
+	split = malloc(sizeof(char *) * (char_count(s, c) + 2));
 	if (split == NULL)
 		return (NULL);
 	start = 0;
 	j = 0;
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 	{
-		if (str[i] == c)
+		if (s[i] == c)
 		{
-			split[j] = extract(str, start, i);
+			split[j] = extract(s, start, i);
 			j++;
 			start = i + 1;
 		}
 		i++;
 	}
-	split[j] = extract(str, start, i);
+	split[j] = extract(s, start, i);
 	split[j + 1] = NULL;
 	return (split);
 }
