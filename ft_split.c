@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 17:35:12 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 09:15:13 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/14 09:52:30 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char	extract(char const *str, int start, int i)
+char	*extract2(char const *str, int start, int i)
 {
 	int		j;
 	char	*extracted_str;
 
 	extracted_str = malloc(sizeof(char) * (i - start + 1));
 	j = 0;
-	while (j < i)
+	while (j + start < i)
+	{
+		extracted_str[j] = str[start + j];
+		j++;
+	}
+	extracted_str[j] = '\0';
+	return (extracted_str);
+}
+
+char	*extract(char const *str, int start, int i)
+{
+	int		j;
+	char	*extracted_str;
+
+	extracted_str = malloc(sizeof(char) * (i - start + 1));
+	j = 0;
+	while (j + start < i)
 	{
 		extracted_str[j] = str[start + j];
 		j++;
@@ -52,8 +68,7 @@ char	**ft_split(char const *str, char c)
 	int		counter;
 	int		j;
 
-	counter = char_count(str, c);
-	split = malloc(sizeof(char *) * (counter + 2));
+	split = malloc(sizeof(char *) * (char_count(str, c) + 2));
 	if (split == NULL)
 		return (NULL);
 	start = 0;
@@ -64,23 +79,26 @@ char	**ft_split(char const *str, char c)
 		if (str[i] == c)
 		{
 			split[j] = extract(str, start, i);
+			j++;
 			start = i + 1;
 		}
 		i++;
 	}
+	split[j] = extract(str, start, i);
+	split[j + 1] = NULL;
 	return (split);
 }
 
-int	main(void)
-{
-	char **split;
-	int i;
+// int	main(void)
+// {
+// 	char **split;
+// 	int i;
 
-	split = ft_split("hello ca va", ' ');
-	i = 0;
-	while (split[i] != '\0')
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-}
+// 	split = ft_split("hello/ca/va/bien/et/toi", '/');
+// 	i = 0;
+// 	while (split[i] != NULL)
+// 	{
+// 		printf("%s\n", split[i]);
+// 		i++;
+// 	}
+// }
