@@ -6,7 +6,7 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 13:25:01 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 16:26:34 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/15 17:19:57 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,11 @@ void	*ft_memset(void *ptr, int a, size_t c)
 	unsigned char	*tamp;
 
 	tamp = (unsigned char *)ptr;
-	(void)a;
-	(void)c;
-	// while (c > 0)
-	// {
-	// 	printf("dans le while \n");
-	// 	// *tamp = (unsigned char)a;
-	// 	tamp++;
-	// 	c--;
-	// }
+	while (c > 0)
+	{
+		*tamp = (unsigned char)a;
+		tamp++;
+		c--;
+	}
 	return (ptr);
 }
