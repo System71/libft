@@ -6,15 +6,13 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 14:57:02 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 15:11:10 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:32:19 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	index_start(char const *s1, char const *set)
+static int	index_start(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
@@ -40,13 +38,13 @@ int	index_start(char const *s1, char const *set)
 	return (i);
 }
 
-int	index_end(char const *s1, char const *set)
+static int	index_end(char const *s1, char const *set)
 {
 	int	i;
 	int	j;
 
 	i = ft_strlen(s1) - 1;
-	while (i >= 0)
+	while (i > 0)
 	{
 		j = 0;
 		while (set[j] != '\0')
@@ -75,7 +73,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = index_start(s1, set);
 	end = index_end(s1, set);
-	str = malloc(sizeof(char) * (end - start + 2));
+	if (start > end)
+	{
+		str = ft_calloc(1, 1);
+		return (str);
+	}
+	str = malloc(sizeof(char) * end - start + 2);
 	if (str == NULL)
 		return (NULL);
 	i = 0;

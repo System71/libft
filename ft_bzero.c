@@ -6,20 +6,20 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 08:18:20 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/14 14:55:14 by prigaudi         ###   ########.fr       */
+/*   Updated: 2024/11/20 18:03:49 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *ptr, size_t n)
 {
 	unsigned char	*tamp;
 
-	tamp = ptr;
+	tamp = (unsigned char *)ptr;
 	while (n > 0)
 	{
-		*tamp = '0';
+		*tamp = '\0';
 		tamp++;
 		n--;
 	}

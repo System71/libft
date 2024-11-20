@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/06 14:33:41 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/20 18:21:09 by prigaudi         ###   ########.fr       */
+/*   Created: 2024/11/20 16:21:59 by prigaudi          #+#    #+#             */
+/*   Updated: 2024/11/20 18:59:46 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t len)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned long	i;
-	unsigned long	j;
-	char			*ptr;
+	t_list	*result;
+	t_list	*new_list;
+	void	*new_content;
 
-	if (ft_strlen(s2) == 0)
-		return ((char *)s1);
-	i = 0;
-	while (s1[i] != '\0' && i < len)
+	result = NULL;
+	if (lst == NULL || f == NULL)
+		return (result);
+	while (lst)
 	{
-		j = 0;
-		ptr = (char *)&(s1[i]);
-		while (s2[j] != '\0' && (i + j) < len)
+		new_content = f(lst->content);
+		new_list = ft_lstnew(new_content);
+		if (new_list == NULL)
 		{
-			if (s1[i + j] == s2[j])
-			{
-				j++;
-				if (s2[j] == '\0')
-					return (ptr);
-			}
-			else
-				break ;
+			del(new_content);
+			ft_lstclear(&result, del);
+			return (NULL);
 		}
-		i++;
+		ft_lstadd_back(&result, new_list);
+		lst = lst->next;
 	}
-	return (NULL);
+	return (result);
 }
