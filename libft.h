@@ -6,12 +6,15 @@
 /*   By: prigaudi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 08:47:48 by prigaudi          #+#    #+#             */
-/*   Updated: 2024/11/20 18:38:06 by prigaudi         ###   ########.fr       */
+/*   Updated: 2025/02/13 13:39:18 by prigaudi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# include "./gnl/get_next_line.h"
+# include "./printf/ft_printf.h"
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
